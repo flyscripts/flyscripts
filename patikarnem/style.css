@@ -1,0 +1,52 @@
+/* Pati Karnem sitesi — uygulamanın renkleri ve kendi gömülü yazı tipleri (SIL OFL). */
+@font-face { font-family: "Nunito"; src: url("fonts/Nunito.ttf") format("truetype"); font-weight: 200 1000; font-display: swap; }
+@font-face { font-family: "Baloo 2"; src: url("fonts/Baloo2.ttf") format("truetype"); font-weight: 400 800; font-display: swap; }
+
+:root {
+  --bg: #FFF7EF; --card: #FFFFFF; --ink: #2B2040; --soft: #6E6382; --line: #F0E4DA;
+  --coral: #FF6B8B; --grape: #8B5CF6; --sky: #4C8DFF; --mint: #14B8A6; --sun: #FFB627; --danger: #E5484D;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #16111F; --card: #231B30; --ink: #F4EEFF; --soft: #B4A9C8; --line: #2E2440; }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  font-family: "Nunito", system-ui, sans-serif; font-weight: 600; color: var(--ink); background: var(--bg);
+  line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+a { color: var(--coral); font-weight: 800; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+.hero {
+  border-radius: 28px; padding: 28px 24px; color: #fff; margin-bottom: 22px;
+  background: linear-gradient(135deg, var(--coral), var(--grape)); box-shadow: 0 16px 40px rgba(139,92,246,.25);
+}
+.hero .brand { font-size: 13px; font-weight: 900; letter-spacing: 1.4px; opacity: .9; text-transform: uppercase; }
+.hero h1 { font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 34px; line-height: 1.15; margin: 6px 0 4px; }
+.hero p { margin: 0; opacity: .92; }
+h2 { font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 22px; margin: 28px 0 6px; }
+h3 { font-size: 16px; font-weight: 900; margin: 18px 0 4px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 18px 20px; margin: 14px 0; }
+.muted { color: var(--soft); }
+ul { padding-left: 22px; } li { margin: 4px 0; }
+.lang { display: inline-flex; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 4px; gap: 4px; margin-bottom: 16px; }
+.lang button {
+  font: inherit; font-weight: 900; border: 0; border-radius: 12px; padding: 8px 16px; cursor: pointer;
+  background: transparent; color: var(--soft);
+}
+.lang button.on { background: linear-gradient(135deg, var(--coral), var(--grape)); color: #fff; }
+[data-lang] { display: none; }
+body.tr [data-lang="tr"], body.en [data-lang="en"] { display: block; }
+.btn {
+  display: inline-block; text-decoration: none; color: #fff; font-weight: 900; border: 0; cursor: pointer; font-size: 16px;
+  padding: 14px 22px; border-radius: 18px; background: linear-gradient(135deg, var(--coral), var(--grape));
+}
+.links a { display: block; margin: 10px 0; }
+input[type=password] {
+  width: 100%; font: inherit; padding: 14px 16px; border-radius: 16px; border: 2px solid var(--line);
+  background: var(--bg); color: var(--ink); margin: 6px 0 12px;
+}
+.status { text-align: center; padding: 28px 8px; }
+.status .icon { font-size: 64px; line-height: 1; }
+.ok { color: var(--mint); } .err { color: var(--danger); }
+footer { margin-top: 36px; font-size: 13px; color: var(--soft); text-align: center; }
