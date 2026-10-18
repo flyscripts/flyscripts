@@ -167,6 +167,9 @@ h2 { font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: clamp(30px
 .feature.bk h3 .bkname { background: linear-gradient(90deg, #2DD4BF, #0E9F9A); -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: .1em; }
 .appicon { width: 64px; height: 64px; border-radius: 18px; box-shadow: 0 12px 30px rgba(14,110,110,.45); display: block; margin-bottom: 14px; }
 .btn.teal { background: linear-gradient(135deg, #14B8A6, #0E6E6E); color: #fff; box-shadow: 0 12px 30px rgba(20,184,166,.3); }
+.links-row a.btn.teal { border: 0; min-height: 44px; padding: 0 18px; border-radius: 14px; color: #fff; background: linear-gradient(135deg, #14B8A6, #0E6E6E); }
+.links-row { align-items: center; gap: 8px; }
+.links-row a { padding: 0 13px; font-size: 14px; gap: 7px; white-space: nowrap; }
 .bkshots { position: relative; height: 540px; }
 /* Pati Karnem'deki telefon çerçevesinin aynısı; ekran görüntüsü üstten başlar, taşan kısım gizlenir */
 .bkshots .bkphone { height: 520px; }
@@ -357,11 +360,11 @@ body.tr img[data-lang="tr"], body.en img[data-lang="en"] { display: block; }
           </div>
           <p class="note"><span data-lang="tr">Benim Kredim bir takip uygulamasıdır; kredi vermez, aracılık yapmaz, ödeme işlemez. Hesaplamalar girdiğin bilgilere göre tahminidir.</span>
             <span data-lang="en">Benim Kredim is a tracking app; it does not provide loans, broker them or process payments. Calculations are estimates based on what you enter.</span></p>
-          <a class="btn teal" href="https://play.google.com/store/apps/details?id=com.benimkredim.kredi_takip" target="_blank" rel="noopener">
-            ▶ <span data-lang="tr">Google Play’de aç</span><span data-lang="en">Open on Google Play</span></a>
-          <div class="links-row" style="margin-top:16px">
-            <a href="benimkredim/gizlilik.html"><span class="i">🔒</span><span data-lang="tr">Gizlilik Politikası</span><span data-lang="en">Privacy Policy</span> <span aria-hidden="true">→</span></a>
-            <a href="benimkredim/veri-silme.html"><span class="i">🗑️</span><span data-lang="tr">Veri silme</span><span data-lang="en">Data deletion</span> <span aria-hidden="true">→</span></a>
+          <div class="links-row">
+            <a class="btn teal" href="https://play.google.com/store/apps/details?id=com.benimkredim.kredi_takip" target="_blank" rel="noopener">
+              ▶ <span data-lang="tr">Google Play’de aç</span><span data-lang="en">Open on Google Play</span></a>
+            <a href="benimkredim/gizlilik.html"><span class="i">🔒</span><span data-lang="tr">Gizlilik Politikası</span><span data-lang="en">Privacy Policy</span></a>
+            <a href="benimkredim/veri-silme.html"><span class="i">🗑️</span><span data-lang="tr">Veri silme</span><span data-lang="en">Data deletion</span></a>
           </div>
         </div>
         <div class="bkshots" aria-hidden="true">
@@ -397,8 +400,8 @@ body.tr img[data-lang="tr"], body.en img[data-lang="en"] { display: block; }
             <li><i style="background:rgba(255,255,255,.08)">☁️</i><span><span data-lang="tr">Hesabınla her cihazdan erişim</span><span data-lang="en">Access from any device with your account</span></span></li>
           </ul>
           <div class="links-row">
-            <a href="patikarnem/gizlilik.html"><span class="i">🔒</span><span data-lang="tr">Gizlilik Politikası</span><span data-lang="en">Privacy Policy</span> <span aria-hidden="true">→</span></a>
-            <a href="patikarnem/hesap-silme.html"><span class="i">🗑️</span><span data-lang="tr">Hesap ve veri silme</span><span data-lang="en">Account &amp; data deletion</span> <span aria-hidden="true">→</span></a>
+            <a href="patikarnem/gizlilik.html"><span class="i">🔒</span><span data-lang="tr">Gizlilik Politikası</span><span data-lang="en">Privacy Policy</span></a>
+            <a href="patikarnem/hesap-silme.html"><span class="i">🗑️</span><span data-lang="tr">Hesap ve veri silme</span><span data-lang="en">Account &amp; data deletion</span></a>
           </div>
         </div>
         <div class="shots" aria-hidden="true">
