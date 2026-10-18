@@ -58,7 +58,11 @@ header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(14px); bac
 @keyframes floaty { 50% { transform: translateY(-10px); } }
 .eyebrow { display: inline-block; margin: 26px 0 14px; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--soft); font-size: 14px; font-weight: 800; }
 h1 { font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: clamp(40px, 7vw, 76px); line-height: 1.02; margin: 0 auto; max-width: 900px; letter-spacing: -.5px; }
-.grad { background: var(--brand); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.grad {
+  background: var(--brand); -webkit-background-clip: text; background-clip: text; color: transparent;
+  /* Renk, yazının kutusuna boyanır; y, g, ç gibi harflerin kuyruğu kesilmesin diye alttan/sağdan pay. */
+  padding: 0 .06em .14em 0; margin-right: -.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
 .lead { max-width: 640px; margin: 22px auto 34px; color: var(--soft); font-size: clamp(17px, 2.2vw, 20px); }
 .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .btn { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 900; padding: 14px 22px; border-radius: 16px; transition: transform .2s, box-shadow .2s; }
