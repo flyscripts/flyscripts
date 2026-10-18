@@ -29,7 +29,7 @@ body { background: var(--bg); color: var(--ink); }
 .site-header .lang button.on { background: var(--brand); color: #fff; }
 
 .dd { position: relative; }
-.dd-btn { font: inherit; font-weight: 800; font-size: 15px; line-height: 1.6; color: var(--soft); background: none; border: 0; cursor: pointer; padding: 0; }
+.dd-btn { white-space: nowrap; display: inline-flex; align-items: center; gap: 4px; font: inherit; font-weight: 800; font-size: 15px; line-height: 1.6; color: var(--soft); background: none; border: 0; cursor: pointer; padding: 0; }
 .dd-btn:hover, .dd.open .dd-btn { color: var(--ink); }
 .dd .caret { display: inline-block; font-size: 11px; transition: transform .2s; }
 .dd.open .caret { transform: rotate(180deg); }
@@ -64,3 +64,6 @@ body { background: var(--bg); color: var(--ink); }
   .site-header nav > a.contact { display: none; }
   .dd-menu { right: -70px; width: 280px; }
 }
+
+/* Satır içi dil parçaları (menü, gezinti izi) blok olmasın */
+body.tr span[data-lang="tr"], body.en span[data-lang="en"] { display: inline; }
