@@ -171,6 +171,13 @@ h2 { font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: clamp(30px
 .bkshots .chip.c3 { top: 30px; left: 0; animation-delay: -1s; }
 .bkshots .chip.c4 { bottom: 40px; right: 0; animation-delay: -4s; }
 .note { color: var(--soft); font-size: 13px; margin: 0 0 18px; }
+.whatsnew {
+  margin: 0 0 18px; padding: 14px 16px; border-radius: 18px; border: 1px solid rgba(45,212,191,.25);
+  background: linear-gradient(135deg, rgba(20,184,166,.12), rgba(20,184,166,.03));
+}
+.whatsnew b { display: block; font-size: 14px; color: #6EE7B7; margin-bottom: 6px; }
+.whatsnew ul { margin: 0; padding-left: 18px; font-size: 14px; }
+.whatsnew li { margin: 3px 0; }
 
 /* Proje ızgarası */
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
@@ -343,6 +350,23 @@ body.tr img[data-lang="tr"], body.en img[data-lang="en"] { display: block; }
             <li><i style="background:rgba(255,107,139,.18)">💱</i><span><span data-lang="tr">Farklı para birimlerinde takip</span><span data-lang="en">Tracking in multiple currencies</span></span></li>
             <li><i style="background:rgba(255,255,255,.08)">🔒</i><span><span data-lang="tr">Yedekleme ve isteğe bağlı uygulama kilidi</span><span data-lang="en">Backups and optional app lock</span></span></li>
           </ul>
+          <div class="whatsnew">
+            <b><span data-lang="tr">✨ Yeni sürümde</span><span data-lang="en">✨ New in this version</span></b>
+            <ul data-lang="tr">
+              <li>Erken kapama ve ara ödeme hesabı: tahmini tasarrufu gör, ödemeni kaydet</li>
+              <li>Taksit takvimi ve “Bu Ay” özeti</li>
+              <li>Taksit tutarlarını tek tek düzenleme</li>
+              <li>Yedeği Drive, e-posta ya da mesajla paylaşma ve yedek hatırlatması</li>
+              <li>İsteğe bağlı uygulama kilidi (parmak izi / ekran kilidi)</li>
+            </ul>
+            <ul data-lang="en">
+              <li>Early payoff &amp; prepayment estimates: see the estimated savings and record your payment</li>
+              <li>Installment calendar and a “This Month” summary</li>
+              <li>Edit installment amounts one by one</li>
+              <li>Share backups via Drive, email or messages, plus backup reminders</li>
+              <li>Optional app lock (fingerprint / screen lock)</li>
+            </ul>
+          </div>
           <p class="note"><span data-lang="tr">Benim Kredim bir takip uygulamasıdır; kredi vermez, aracılık yapmaz, ödeme işlemez. Hesaplamalar girdiğin bilgilere göre tahminidir.</span>
             <span data-lang="en">Benim Kredim is a tracking app; it does not provide loans, broker them or process payments. Calculations are estimates based on what you enter.</span></p>
           <a class="btn teal" href="https://play.google.com/store/apps/details?id=com.benimkredim.kredi_takip" target="_blank" rel="noopener">
