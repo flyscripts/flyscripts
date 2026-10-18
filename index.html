@@ -174,10 +174,10 @@ h2 { font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: clamp(30px
 .bkshots .bkphone .screen img { display: none; width: 100%; padding-top: 26px; background: #000; }
 body.tr .bkshots .bkphone .screen img[data-lang="tr"], body.en .bkshots .bkphone .screen img[data-lang="en"] { display: block; }
 .bkshots .b1 { right: 6%; top: 0; z-index: 2; }
-.bkshots .b2 { right: auto; left: 2%; top: 40px; transform: rotate(-6deg); animation-delay: -3s; z-index: 1; }
+.bkshots .b2 { right: auto; left: 0; top: 40px; transform: rotate(-6deg); animation-delay: -3s; z-index: 1; }
 .bkshots .b2 { animation-name: floatyTilt; }
 @keyframes floatyTilt { 0%, 100% { transform: rotate(-6deg); } 50% { transform: rotate(-6deg) translateY(-10px); } }
-.bkshots .chip.c3 { top: 30px; left: 0; animation-delay: -1s; }
+.bkshots .chip.c3 { top: 24px; left: -10px; animation-delay: -1s; }
 .bkshots .chip.c4 { bottom: 40px; right: 0; animation-delay: -4s; }
 .note { color: var(--soft); font-size: 13px; margin: 0 0 18px; }
 /* Benim Kredim gizlilik vurgusu */
@@ -308,14 +308,6 @@ body.tr img[data-lang="tr"], body.en img[data-lang="en"] { display: block; }
   <section id="benim-kredim">
     <div class="wrap">
       <div class="feature bk reveal">
-        <div class="bkshots" aria-hidden="true">
-          <div class="phone bkphone b2"><div class="notch"></div><div class="screen">
-            <img data-lang="tr" src="assets/bk-tr-02.jpg" alt=""><img data-lang="en" src="assets/bk-en-02.jpg" alt=""></div></div>
-          <div class="phone bkphone b1"><div class="notch"></div><div class="screen">
-            <img data-lang="tr" src="assets/bk-tr-01.jpg" alt=""><img data-lang="en" src="assets/bk-en-01.jpg" alt=""></div></div>
-          <div class="chip c3">🔔 <span data-lang="tr">Yaklaşan taksit · 3 gün</span><span data-lang="en">Upcoming installment · 3 days</span></div>
-          <div class="chip c4">📊 <span data-lang="tr">Raporlar</span><span data-lang="en">Reports</span></div>
-        </div>
         <div>
           <img class="appicon" src="assets/bk-icon.png" alt="">
           <span class="badge live"><span data-lang="tr">Google Play’de yayında</span><span data-lang="en">Live on Google Play</span></span>
@@ -372,6 +364,14 @@ body.tr img[data-lang="tr"], body.en img[data-lang="en"] { display: block; }
             <a href="benimkredim/veri-silme.html"><span class="i">🗑️</span><span data-lang="tr">Veri silme</span><span data-lang="en">Data deletion</span> <span aria-hidden="true">→</span></a>
           </div>
         </div>
+        <div class="bkshots" aria-hidden="true">
+          <div class="phone bkphone b2"><div class="notch"></div><div class="screen">
+            <img data-lang="tr" src="assets/bk-tr-02.jpg" alt=""><img data-lang="en" src="assets/bk-en-02.jpg" alt=""></div></div>
+          <div class="phone bkphone b1"><div class="notch"></div><div class="screen">
+            <img data-lang="tr" src="assets/bk-tr-01.jpg" alt=""><img data-lang="en" src="assets/bk-en-01.jpg" alt=""></div></div>
+          <div class="chip c3">🔔 <span data-lang="tr">Yaklaşan taksit · 3 gün</span><span data-lang="en">Upcoming installment · 3 days</span></div>
+          <div class="chip c4">📊 <span data-lang="tr">Raporlar</span><span data-lang="en">Reports</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -381,6 +381,7 @@ body.tr img[data-lang="tr"], body.en img[data-lang="en"] { display: block; }
     <div class="wrap">
       <div class="feature reveal">
         <div>
+          <img class="appicon" src="assets/pati-icon.svg" alt="" style="box-shadow:0 12px 30px rgba(255,94,138,.4)">
           <span class="badge"><span data-lang="tr">Yakında Google Play’de</span><span data-lang="en">Coming soon to Google Play</span></span>
           <h3><span class="paw">Pati Karnem</span> 🐾</h3>
           <p class="tag">
