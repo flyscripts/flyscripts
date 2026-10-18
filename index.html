@@ -180,6 +180,15 @@ body.tr .bkshots .bkphone .screen img[data-lang="tr"], body.en .bkshots .bkphone
 .bkshots .chip.c3 { top: 30px; left: 0; animation-delay: -1s; }
 .bkshots .chip.c4 { bottom: 40px; right: 0; animation-delay: -4s; }
 .note { color: var(--soft); font-size: 13px; margin: 0 0 18px; }
+/* Benim Kredim gizlilik vurgusu */
+.trust { margin: 0 0 22px; padding: 16px; border-radius: 22px; background: rgba(20,184,166,.08); border: 1px solid rgba(45,212,191,.22); }
+.trust h4 { margin: 0 0 4px; font-family: "Baloo 2", sans-serif; font-size: 20px; }
+.trust p { margin: 0 0 12px; color: var(--soft); font-size: 14px; }
+.tchips { display: flex; flex-wrap: wrap; gap: 8px; }
+.tchips span.t {
+  display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; border-radius: 999px; font-size: 13.5px; font-weight: 900;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+}
 .whatsnew {
   margin: 0 0 18px; padding: 14px 16px; border-radius: 18px; border: 1px solid rgba(45,212,191,.25);
   background: linear-gradient(135deg, rgba(20,184,166,.12), rgba(20,184,166,.03));
@@ -316,6 +325,20 @@ body.tr img[data-lang="tr"], body.en img[data-lang="en"] { display: block; }
             <span data-lang="tr">Bankalardan almış olduğun kredileri kendin kaydet, taksitlerini tek ekranda takip et. Tamamen çevrimdışı; verilerin telefonunda kalır.</span>
             <span data-lang="en">Record the loans you already have and track every installment on one screen. Fully offline; your data stays on your phone.</span>
           </p>
+          <div class="trust">
+            <h4><span data-lang="tr">Verilerin sadece senin 🔐</span><span data-lang="en">Your data is yours alone 🔐</span></h4>
+            <p><span data-lang="tr">Benim Kredim, borç bilgileri gibi en özel verilerin için tasarlandı: hiçbir şey telefonundan çıkmaz. Ne biz görürüz, ne başkası.</span>
+              <span data-lang="en">Benim Kredim is built for your most private data: nothing ever leaves your phone. Not us, not anyone.</span></p>
+            <div class="tchips">
+              <span class="t">✈️ <span data-lang="tr">%100 çevrimdışı</span><span data-lang="en">100% offline</span></span>
+              <span class="t">📱 <span data-lang="tr">Veriler yalnızca telefonunda</span><span data-lang="en">Data stays on your phone</span></span>
+              <span class="t">👤 <span data-lang="tr">Hesap yok, kayıt yok</span><span data-lang="en">No account, no sign-up</span></span>
+              <span class="t">🚫 <span data-lang="tr">Reklam yok</span><span data-lang="en">No ads</span></span>
+              <span class="t">🕵️ <span data-lang="tr">Takip ve analitik yok</span><span data-lang="en">No tracking or analytics</span></span>
+              <span class="t">🤝 <span data-lang="tr">Kimseyle paylaşılmaz</span><span data-lang="en">Never shared</span></span>
+              <span class="t">🌐 <span data-lang="tr">İnternet izni bile yok</span><span data-lang="en">Not even internet permission</span></span>
+            </div>
+          </div>
           <ul class="perks">
             <li><i style="background:rgba(20,184,166,.18)">📅</i><span><span data-lang="tr">Ödeme planı ve taksit takvimi</span><span data-lang="en">Payment schedule &amp; installment calendar</span></span></li>
             <li><i style="background:rgba(255,182,39,.18)">🔔</i><span><span data-lang="tr">Yaklaşan taksit hatırlatmaları</span><span data-lang="en">Upcoming installment reminders</span></span></li>
