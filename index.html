@@ -345,6 +345,10 @@ body.tr img[data-lang="tr"], body.en img[data-lang="en"] { display: block; }
             <span data-lang="en">Benim Kredim is a tracking app; it does not provide loans, broker them or process payments. Calculations are estimates based on what you enter.</span></p>
           <a class="btn teal" href="https://play.google.com/store/apps/details?id=com.benimkredim.kredi_takip" target="_blank" rel="noopener">
             ▶ <span data-lang="tr">Google Play’de aç</span><span data-lang="en">Open on Google Play</span></a>
+          <div class="links-row" style="margin-top:16px">
+            <a href="benimkredim/gizlilik.html"><span class="i">🔒</span><span data-lang="tr">Gizlilik Politikası</span><span data-lang="en">Privacy Policy</span> <span aria-hidden="true">→</span></a>
+            <a href="benimkredim/hesap-silme.html"><span class="i">🗑️</span><span data-lang="tr">Veri silme</span><span data-lang="en">Data deletion</span> <span aria-hidden="true">→</span></a>
+          </div>
         </div>
       </div>
     </div>
@@ -464,7 +468,7 @@ body.tr img[data-lang="tr"], body.en img[data-lang="en"] { display: block; }
   function set(l) {
     document.body.classList.remove('tr', 'en'); document.body.classList.add(l); document.documentElement.lang = l;
     document.querySelectorAll('.lang button').forEach(function (b) { b.classList.toggle('on', b.dataset.l === l); });
-    document.querySelectorAll('a[href^="patikarnem/"]').forEach(function (a) { a.href = a.getAttribute('href').split('?')[0] + (l === 'en' ? '?lang=en' : ''); });
+    document.querySelectorAll('a[href^="patikarnem/"], a[href^="benimkredim/"]').forEach(function (a) { a.href = a.getAttribute('href').split('?')[0] + (l === 'en' ? '?lang=en' : ''); });
     try { localStorage.setItem('fs-lang', l); } catch (e) {}
   }
   document.querySelectorAll('.lang button').forEach(function (b) { b.onclick = function () { set(b.dataset.l); }; });
