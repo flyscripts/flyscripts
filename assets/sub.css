@@ -1,0 +1,66 @@
+/* Alt sayfalar (gizlilik, veri silme): ana sitenin koyu teması ve üst çubuğu.
+   Her uygulamanın style.css'inden SONRA yüklenir. */
+:root {
+  --bg: #08060F; --bg2: #110D1D; --card: rgba(255,255,255,.045); --line: rgba(255,255,255,.09);
+  --ink: #F4F0FF; --soft: #A79FC0;
+  --violet: #A12BD6; --indigo: #7A5BEA; --cyan: #5BC4F5;
+  --brand: linear-gradient(90deg, var(--violet), var(--indigo) 50%, var(--cyan));
+}
+body { background: var(--bg); color: var(--ink); }
+.card { background: var(--card); border-color: var(--line); }
+.aurora { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.aurora span { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .35; }
+.aurora span:nth-child(1) { width: 480px; height: 480px; background: var(--violet); top: -180px; left: -140px; }
+.aurora span:nth-child(2) { width: 420px; height: 420px; background: var(--cyan); top: 40%; right: -180px; opacity: .22; }
+
+/* Üst çubuk (ana sayfadakinin aynısı) */
+.site-header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(14px); background: rgba(8,6,15,.7); border-bottom: 1px solid var(--line); }
+.site-header .bar { max-width: 1120px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; gap: 18px; height: 78px; }
+.site-header .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--ink); }
+.site-header .logo img { height: 34px; }
+.site-header .wm { display: flex; flex-direction: column; align-items: center; line-height: 1; }
+.site-header .wm b { font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 29px; }
+.site-header .wm small { color: var(--soft); font-weight: 800; font-size: 13px; letter-spacing: .4px; margin-top: 2px; }
+.site-header nav { margin-left: auto; display: flex; gap: 22px; align-items: center; }
+.site-header nav > a { text-decoration: none; color: var(--soft); font-weight: 800; font-size: 15px; }
+.site-header nav > a:hover { color: var(--ink); }
+.site-header .lang { margin: 0; background: transparent; border: 1px solid var(--line); border-radius: 12px; padding: 3px; gap: 2px; }
+.site-header .lang button { font-size: 13px; padding: 5px 10px; border-radius: 9px; }
+.site-header .lang button.on { background: var(--brand); color: #fff; }
+
+.dd { position: relative; }
+.dd-btn { font: inherit; font-weight: 800; font-size: 15px; line-height: 1.6; color: var(--soft); background: none; border: 0; cursor: pointer; padding: 0; }
+.dd-btn:hover, .dd.open .dd-btn { color: var(--ink); }
+.dd .caret { display: inline-block; font-size: 11px; transition: transform .2s; }
+.dd.open .caret { transform: rotate(180deg); }
+.dd-menu {
+  position: absolute; top: calc(100% + 10px); right: -12px; width: 320px; padding: 8px; border-radius: 20px;
+  background: rgba(17,13,29,.97); border: 1px solid var(--line); box-shadow: 0 24px 60px rgba(0,0,0,.5);
+  opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity .18s, transform .18s, visibility .18s;
+}
+.dd-menu::before { content: ""; position: absolute; top: -12px; left: 0; right: 0; height: 12px; }
+.dd.open .dd-menu { opacity: 1; visibility: visible; transform: none; }
+@media (hover: hover) { .dd:hover .dd-menu { opacity: 1; visibility: visible; transform: none; } }
+.dd-menu a { display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 14px; text-decoration: none; color: var(--ink); }
+.dd-menu a:hover { background: rgba(255,255,255,.06); }
+.dd-menu img { width: 40px; height: 40px; border-radius: 12px; flex: none; }
+.dd-menu b { display: block; font-size: 15px; line-height: 1.2; }
+.dd-menu small { display: block; color: var(--soft); font-size: 12.5px; font-weight: 700; }
+
+/* İçerik üstünde: Ana sayfa › Uygulama › Sayfa */
+.crumbs { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 22px 0 16px; font-size: 14px; font-weight: 800; color: var(--soft); }
+.crumbs a { color: var(--soft); text-decoration: none; }
+.crumbs a:hover { color: var(--ink); }
+.crumbs .sep { opacity: .5; }
+
+.site-footer { max-width: 760px; margin: 40px auto 0; padding: 22px 16px 40px; border-top: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; color: var(--soft); font-size: 14px; }
+.site-footer a { color: var(--soft); }
+
+@media (max-width: 640px) {
+  .site-header .wm small { display: none; }
+  .site-header .wm b { font-size: 24px; }
+  .site-header .logo img { height: 28px; }
+  .site-header nav > a.contact { display: none; }
+  .dd-menu { right: -70px; width: 280px; }
+}

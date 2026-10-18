@@ -5,11 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pati Karnem · Hesap Silme / Delete Account</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../assets/sub.css">
+<link rel="icon" href="../assets/flyscripts-mark.svg" type="image/svg+xml">
 <script src="lang.js"></script>
 </head>
 <body class="tr">
+<div class="aurora"><span></span><span></span></div>
+<header class="site-header">
+  <div class="bar">
+    <a class="logo" href="../"><img src="../assets/flyscripts-mark.svg" alt=""><span class="wm"><b>flyscripts</b><small>app studios</small></span></a>
+    <nav>
+      <div class="dd">
+        <button class="dd-btn" aria-haspopup="true" aria-expanded="false"><span data-lang="tr">Projeler</span><span data-lang="en">Projects</span> <span class="caret">▾</span></button>
+        <div class="dd-menu" role="menu">
+          <a role="menuitem" href="../#benim-kredim"><img src="../assets/bk-icon.png" alt=""><span><b>Benim Kredim</b>
+            <small><span data-lang="tr">Kredi taksit takibi · Google Play’de</span><span data-lang="en">Loan installment tracker · On Google Play</span></small></span></a>
+          <a role="menuitem" href="../#pati-karnem"><img src="../assets/pati-icon.svg" alt=""><span><b>Pati Karnem</b>
+            <small><span data-lang="tr">Evcil dost sağlık karnesi · Yakında</span><span data-lang="en">Pet health card · Coming soon</span></small></span></a>
+        </div>
+      </div>
+      <a class="contact" href="../#iletisim"><span data-lang="tr">İletişim</span><span data-lang="en">Contact</span></a>
+      <div class="lang"><button data-l="tr">TR</button><button data-l="en">EN</button></div>
+    </nav>
+  </div>
+</header>
 <div class="wrap">
-  <div class="lang"><button data-l="tr">Türkçe</button><button data-l="en">English</button></div>
+  <nav class="crumbs" aria-label="breadcrumb"><a href="../"><span data-lang="tr">Ana sayfa</span><span data-lang="en">Home</span></a><span class="sep">›</span><a href="../#pati-karnem">Pati Karnem</a><span class="sep">›</span><span><span data-lang="tr">Hesap silme</span><span data-lang="en">Account deletion</span></span></nav>
 
   <div data-lang="tr">
     <div class="hero">
@@ -91,7 +112,16 @@
     <p class="muted">See the <a href="gizlilik.html?lang=en">Privacy Policy</a> for details.</p>
   </div>
 
-  <footer>© 2026 flyscripts app studios · <a href="index.html">Pati Karnem</a></footer>
 </div>
+<footer class="site-footer"><span>© 2026 flyscripts app studios</span><span><a href="../"><span data-lang="tr">← Ana sayfaya dön</span><span data-lang="en">← Back to home</span></a> · <a href="mailto:support@flyscripts.com">support@flyscripts.com</a></span></footer>
+<script>
+(function () {
+  var dd = document.querySelector('.dd'), b = dd && dd.querySelector('.dd-btn');
+  if (!dd) return;
+  b.onclick = function (e) { e.stopPropagation(); b.setAttribute('aria-expanded', dd.classList.toggle('open')); };
+  document.addEventListener('click', function () { dd.classList.remove('open'); b.setAttribute('aria-expanded', false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') dd.classList.remove('open'); });
+})();
+</script>
 </body>
 </html>
