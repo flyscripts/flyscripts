@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 274 141" role="img" aria-label="flyscripts">
+  <defs>
+    <linearGradient id="fs" x1="0" y1="0" x2="274" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A12BD6"/>
+      <stop offset="0.5" stop-color="#7A5BEA"/>
+      <stop offset="1" stop-color="#5BC4F5"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#fs)">
+    <path d="M46 38 L71 12 Q83 0 99 0 L273 0 L248 26 Q236 38 220 38 Z"/>
+    <path d="M16 94 L42 65 Q54 53 70 53 L206 53 L180 82 Q168 94 152 94 Z"/>
+    <path d="M8 141 L34 115 Q46 103 62 103 L132 103 L106 129 Q94 141 78 141 Z"/>
+  </g>
+</svg>

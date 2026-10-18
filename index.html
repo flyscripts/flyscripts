@@ -1,38 +1,352 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <title>Bakımdayız | flyscripts</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      text-align: center;
-    }
-    .box {
-      padding: 40px;
-    }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 12px;
-    }
-    p {
-      opacity: 0.85;
-      font-size: 1.1rem;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>flyscripts app studios</title>
+<meta name="description" content="flyscripts app studios — gündelik hayatı kolaylaştıran, özenle tasarlanmış mobil uygulamalar. İlk uygulamamız: Pati Karnem.">
+<meta property="og:title" content="flyscripts app studios">
+<meta property="og:description" content="Gündelik hayatı kolaylaştıran, özenle tasarlanmış mobil uygulamalar.">
+<link rel="icon" href="assets/flyscripts-mark.svg" type="image/svg+xml">
+<style>
+/* Yazı tipleri: Nunito ve Baloo 2 (SIL OFL), kendi sunucumuzdan. */
+@font-face { font-family: "Nunito"; src: url("patikarnem/fonts/Nunito.ttf") format("truetype"); font-weight: 200 1000; font-display: swap; }
+@font-face { font-family: "Baloo 2"; src: url("patikarnem/fonts/Baloo2.ttf") format("truetype"); font-weight: 400 800; font-display: swap; }
+
+:root {
+  --bg: #08060F; --bg2: #110D1D; --card: rgba(255,255,255,.045); --line: rgba(255,255,255,.09);
+  --ink: #F4F0FF; --soft: #A79FC0;
+  --violet: #A12BD6; --indigo: #7A5BEA; --cyan: #5BC4F5;
+  --coral: #FF6B8B; --grape: #8B5CF6; --mint: #14B8A6; --sun: #FFB627;
+  --brand: linear-gradient(90deg, var(--violet), var(--indigo) 50%, var(--cyan));
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: "Nunito", system-ui, sans-serif; font-weight: 600; line-height: 1.6;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+a { color: inherit; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+/* Arka planda yavaşça süzülen renk bulutları */
+.aurora { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.aurora span { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .45; animation: drift 22s ease-in-out infinite alternate; }
+.aurora span:nth-child(1) { width: 520px; height: 520px; background: var(--violet); top: -160px; left: -120px; }
+.aurora span:nth-child(2) { width: 460px; height: 460px; background: var(--cyan); top: 30%; right: -160px; animation-delay: -7s; opacity: .3; }
+.aurora span:nth-child(3) { width: 420px; height: 420px; background: var(--coral); bottom: -180px; left: 25%; animation-delay: -13s; opacity: .22; }
+@keyframes drift { to { transform: translate(60px, 40px) scale(1.12); } }
+
+/* Üst çubuk */
+header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(14px); background: rgba(8,6,15,.6); border-bottom: 1px solid var(--line); }
+.nav { display: flex; align-items: center; gap: 18px; height: 68px; }
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo img { height: 26px; }
+.logo b { font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 22px; letter-spacing: .2px; }
+.logo small { color: var(--soft); font-weight: 700; font-size: 13px; margin-left: -6px; }
+.nav nav { margin-left: auto; display: flex; gap: 22px; }
+.nav nav a { text-decoration: none; color: var(--soft); font-weight: 800; font-size: 15px; transition: color .2s; }
+.nav nav a:hover { color: var(--ink); }
+.lang { display: inline-flex; border: 1px solid var(--line); border-radius: 12px; padding: 3px; gap: 2px; }
+.lang button { font: inherit; font-size: 13px; font-weight: 900; border: 0; border-radius: 9px; padding: 5px 10px; cursor: pointer; background: transparent; color: var(--soft); }
+.lang button.on { background: var(--brand); color: #fff; }
+
+/* Kahraman bölüm */
+.hero { padding: 96px 0 72px; text-align: center; }
+.hero .mark { width: 120px; animation: floaty 6s ease-in-out infinite; filter: drop-shadow(0 18px 40px rgba(122,91,234,.45)); }
+@keyframes floaty { 50% { transform: translateY(-10px); } }
+.eyebrow { display: inline-block; margin: 26px 0 14px; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--soft); font-size: 14px; font-weight: 800; }
+h1 { font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: clamp(40px, 7vw, 76px); line-height: 1.02; margin: 0 auto; max-width: 900px; letter-spacing: -.5px; }
+.grad { background: var(--brand); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lead { max-width: 640px; margin: 22px auto 34px; color: var(--soft); font-size: clamp(17px, 2.2vw, 20px); }
+.cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 900; padding: 14px 22px; border-radius: 16px; transition: transform .2s, box-shadow .2s; }
+.btn.primary { background: var(--brand); color: #fff; box-shadow: 0 12px 30px rgba(122,91,234,.35); }
+.btn.ghost { border: 1px solid var(--line); background: var(--card); }
+.btn:hover { transform: translateY(-2px); }
+
+section { padding: 72px 0; }
+.kicker { color: var(--cyan); font-weight: 900; letter-spacing: 1.6px; text-transform: uppercase; font-size: 13px; }
+h2 { font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: clamp(30px, 4.5vw, 46px); line-height: 1.1; margin: 8px 0 14px; }
+.sub { color: var(--soft); max-width: 620px; margin: 0 0 34px; }
+
+/* Öne çıkan proje: Pati Karnem */
+.feature {
+  position: relative; display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center;
+  padding: 44px; border-radius: 36px; overflow: hidden;
+  background: radial-gradient(120% 140% at 0% 0%, rgba(255,107,139,.22), transparent 55%),
+              radial-gradient(120% 140% at 100% 100%, rgba(139,92,246,.25), transparent 55%), var(--bg2);
+  border: 1px solid var(--line);
+}
+.feature .badge { display: inline-flex; align-items: center; gap: 8px; font-weight: 900; font-size: 13px; padding: 6px 12px; border-radius: 999px; background: rgba(20,184,166,.15); color: #5EEAD4; }
+.feature .badge::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #2DD4BF; box-shadow: 0 0 0 4px rgba(45,212,191,.2); }
+.feature h3 { font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: clamp(34px, 5vw, 52px); line-height: 1; margin: 14px 0 6px; }
+.feature h3 .paw { background: linear-gradient(90deg, var(--coral), var(--grape)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.feature .tag { color: var(--soft); font-size: 18px; margin: 0 0 22px; }
+.perks { list-style: none; padding: 0; margin: 0 0 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; }
+.perks li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; }
+.perks i { flex: none; width: 30px; height: 30px; border-radius: 10px; display: grid; place-items: center; font-style: normal; font-size: 16px; }
+.links-row { display: flex; gap: 16px; flex-wrap: wrap; font-size: 14px; }
+.links-row a { color: var(--soft); text-decoration: none; border-bottom: 1px dashed var(--line); }
+.links-row a:hover { color: var(--ink); }
+
+/* Telefon ve karne görselleri */
+.shots { position: relative; height: 520px; }
+.phone {
+  position: absolute; right: 8%; top: 0; width: 260px; height: 520px; border-radius: 42px; padding: 12px;
+  background: linear-gradient(160deg, #2a2240, #120e1c); box-shadow: 0 40px 80px rgba(0,0,0,.55), inset 0 0 0 1px rgba(255,255,255,.08);
+  animation: floaty 7s ease-in-out infinite;
+}
+.phone .screen { width: 100%; height: 100%; border-radius: 32px; overflow: hidden; background: #16111F; position: relative; }
+.phone .screen img { width: 100%; display: block; }
+/* Uygulamanın alt menüsünün küçük benzeri (kodla çizilir) */
+.phone .tabbar {
+  position: absolute; left: 10px; right: 10px; bottom: 14px; height: 52px; border-radius: 22px;
+  background: #231B30; border: 1px solid rgba(255,255,255,.08); display: flex; align-items: center; justify-content: space-around; padding: 0 10px;
+}
+.phone .tabbar i { width: 22px; height: 22px; border-radius: 8px; background: rgba(255,255,255,.14); }
+.phone .tabbar i.on { width: 38px; background: linear-gradient(135deg, #FF9A8B, #FF5E8A); }
+.phone .tabbar .plus {
+  width: 50px; height: 50px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-size: 30px; font-weight: 700; line-height: 1;
+  background: linear-gradient(135deg, #FF9A8B, #FF5E8A); box-shadow: 0 0 0 3px #231B30, 0 0 0 5px #7A5BEA;
+}
+.phone .notch { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 80px; height: 20px; border-radius: 12px; background: #000; z-index: 2; }
+.card-pdf {
+  position: absolute; left: 0; bottom: 10px; width: 230px; border-radius: 16px; overflow: hidden; transform: rotate(-7deg);
+  box-shadow: 0 30px 60px rgba(0,0,0,.5); border: 6px solid #fff; animation: floaty 8s ease-in-out infinite; animation-delay: -3s;
+}
+.card-pdf img { width: 100%; display: block; }
+.chip {
+  position: absolute; z-index: 3; display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 16px;
+  background: rgba(255,255,255,.95); color: #2B2040; font-weight: 900; font-size: 14px; box-shadow: 0 16px 34px rgba(0,0,0,.35);
+  animation: floaty 6s ease-in-out infinite;
+}
+.chip.c1 { top: 60px; left: 6%; animation-delay: -2s; }
+.chip.c2 { bottom: 120px; right: 0; animation-delay: -4s; }
+
+/* Proje ızgarası */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.proj {
+  position: relative; padding: 26px; border-radius: 28px; background: var(--card); border: 1px solid var(--line);
+  min-height: 230px; display: flex; flex-direction: column; transition: transform .25s, border-color .25s;
+}
+.proj:hover { transform: translateY(-4px); border-color: rgba(255,255,255,.18); }
+.proj .ico { width: 56px; height: 56px; border-radius: 18px; display: grid; place-items: center; font-size: 28px; margin-bottom: 16px; }
+.proj h4 { font-family: "Baloo 2", sans-serif; font-size: 24px; margin: 0 0 4px; }
+.proj p { color: var(--soft); margin: 0 0 16px; font-size: 15px; }
+.proj .more { margin-top: auto; font-weight: 900; text-decoration: none; }
+.proj.soon { border-style: dashed; }
+.proj.soon .ico { background: rgba(255,255,255,.06); }
+.shimmer { height: 10px; border-radius: 6px; margin: 6px 0; background: linear-gradient(90deg, rgba(255,255,255,.05), rgba(255,255,255,.12), rgba(255,255,255,.05)); background-size: 200% 100%; animation: sh 2.4s linear infinite; }
+@keyframes sh { to { background-position: -200% 0; } }
+
+/* Değerler */
+.values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.value { padding: 26px; border-radius: 26px; background: var(--card); border: 1px solid var(--line); }
+.value b { display: block; font-family: "Baloo 2", sans-serif; font-size: 21px; margin: 12px 0 4px; }
+.value span { color: var(--soft); font-size: 15px; }
+.value .em { font-size: 30px; }
+
+/* İletişim */
+.contact {
+  text-align: center; padding: 56px 24px; border-radius: 36px; border: 1px solid var(--line);
+  background: radial-gradient(100% 120% at 50% 0%, rgba(122,91,234,.28), transparent 60%), var(--bg2);
+}
+.contact a.mail { font-family: "Baloo 2", sans-serif; font-size: clamp(24px, 4vw, 38px); font-weight: 800; text-decoration: none; }
+footer { padding: 34px 0 48px; color: var(--soft); font-size: 14px; display: flex; gap: 14px; justify-content: space-between; flex-wrap: wrap; }
+footer a { color: var(--soft); }
+
+/* Kaydırınca beliren öğeler */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1); }
+.reveal.in { opacity: 1; transform: none; }
+
+[data-lang] { display: none; }
+body.tr [data-lang="tr"], body.en [data-lang="en"] { display: revert; }
+body.tr span[data-lang="tr"], body.en span[data-lang="en"] { display: inline; }
+
+@media (max-width: 900px) {
+  .feature { grid-template-columns: 1fr; padding: 28px; }
+  .shots { height: 470px; }
+  .phone { width: 230px; height: 460px; right: 4%; }
+  .card-pdf { width: 190px; }
+  .grid, .values { grid-template-columns: 1fr; }
+  .nav nav { display: none; }
+}
+@media (max-width: 520px) {
+  .perks { grid-template-columns: 1fr; }
+  .logo small { display: none; }
+  .chip { font-size: 12px; padding: 8px 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
 </head>
-<body>
-  <div class="box">
-    <h1>🚧 Hazırlanıyor...</h1>
-    <p>flyscripts çok yakında bomba scriptler ve mobil uygulamalarda yayında olacak.</p>
+<body class="tr">
+<div class="aurora"><span></span><span></span><span></span></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><img src="assets/flyscripts-mark.svg" alt=""><b>flyscripts</b><small>app studios</small></a>
+    <nav>
+      <a href="#projeler"><span data-lang="tr">Projeler</span><span data-lang="en">Projects</span></a>
+      <a href="#pati-karnem">Pati Karnem</a>
+      <a href="#iletisim"><span data-lang="tr">İletişim</span><span data-lang="en">Contact</span></a>
+    </nav>
+    <div class="lang"><button data-l="tr">TR</button><button data-l="en">EN</button></div>
   </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <img class="mark" src="assets/flyscripts-mark.svg" alt="flyscripts">
+    <div>
+      <span class="eyebrow"><span data-lang="tr">Mobil uygulama stüdyosu</span><span data-lang="en">Mobile app studio</span></span>
+    </div>
+    <h1>
+      <span data-lang="tr">Fikirleri <span class="grad">uçuran</span> uygulamalar.</span>
+      <span data-lang="en">Apps that let ideas <span class="grad">fly</span>.</span>
+    </h1>
+    <p class="lead">
+      <span data-lang="tr">flyscripts app studios, gündelik hayatı kolaylaştıran, rengârenk ve özenle tasarlanmış mobil uygulamalar üretir.</span>
+      <span data-lang="en">flyscripts app studios builds colorful, carefully crafted mobile apps that make everyday life easier.</span>
+    </p>
+    <div class="cta">
+      <a class="btn primary" href="#pati-karnem"><span data-lang="tr">Pati Karnem’i keşfet</span><span data-lang="en">Discover Pati Karnem</span> →</a>
+      <a class="btn ghost" href="#projeler"><span data-lang="tr">Tüm projeler</span><span data-lang="en">All projects</span></a>
+    </div>
+  </div>
+
+  <!-- Öne çıkan: Pati Karnem -->
+  <section id="pati-karnem">
+    <div class="wrap">
+      <div class="feature reveal">
+        <div>
+          <span class="badge"><span data-lang="tr">Yakında Google Play’de</span><span data-lang="en">Coming soon to Google Play</span></span>
+          <h3><span class="paw">Pati Karnem</span> 🐾</h3>
+          <p class="tag">
+            <span data-lang="tr">Dostunun dijital sağlık karnesi. Aşılar, ilaçlar, veteriner ziyaretleri ve daha fazlası; hiçbir tarihi kaçırma.</span>
+            <span data-lang="en">Your pet’s digital health card. Vaccines, medications, vet visits and more; never miss a date.</span>
+          </p>
+          <ul class="perks">
+            <li><i style="background:rgba(76,141,255,.18)">💉</i><span><span data-lang="tr">Aşı ve ilaç takibi, zamanında hatırlatma</span><span data-lang="en">Vaccine &amp; medication tracking with reminders</span></span></li>
+            <li><i style="background:rgba(255,107,139,.18)">📄</i><span><span data-lang="tr">Tek dokunuşla sağlık karnesi (PDF)</span><span data-lang="en">One-tap health card (PDF)</span></span></li>
+            <li><i style="background:rgba(20,184,166,.18)">🗺️</i><span><span data-lang="tr">Yakındaki veterinerler haritada</span><span data-lang="en">Nearby vets on the map</span></span></li>
+            <li><i style="background:rgba(255,182,39,.18)">⚖️</i><span><span data-lang="tr">Kilo grafiği ve harcama takibi</span><span data-lang="en">Weight chart &amp; spending tracker</span></span></li>
+            <li><i style="background:rgba(139,92,246,.18)">🖼️</i><span><span data-lang="tr">Her dosta özel fotoğraf galerisi</span><span data-lang="en">A photo gallery for every pet</span></span></li>
+            <li><i style="background:rgba(255,255,255,.08)">☁️</i><span><span data-lang="tr">Hesabınla her cihazdan erişim</span><span data-lang="en">Access from any device with your account</span></span></li>
+          </ul>
+          <div class="links-row">
+            <a href="patikarnem/gizlilik.html"><span data-lang="tr">Gizlilik Politikası</span><span data-lang="en">Privacy Policy</span></a>
+            <a href="patikarnem/hesap-silme.html"><span data-lang="tr">Hesap silme</span><span data-lang="en">Account deletion</span></a>
+          </div>
+        </div>
+        <div class="shots" aria-hidden="true">
+          <div class="card-pdf"><img src="assets/pati-karne.jpg" alt=""></div>
+          <div class="phone"><div class="notch"></div><div class="screen"><img src="assets/pati-quickadd.jpg" alt="">
+            <div class="tabbar"><i class="on"></i><i></i><span class="plus">+</span><i></i><i></i></div></div></div>
+          <div class="chip c1">💊 <span data-lang="tr">Vitamin · Bugün</span><span data-lang="en">Vitamin · Today</span></div>
+          <div class="chip c2">✅ <span data-lang="tr">Kaydedildi!</span><span data-lang="en">Saved!</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projeler -->
+  <section id="projeler">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="kicker"><span data-lang="tr">Projelerimiz</span><span data-lang="en">Our projects</span></div>
+        <h2><span data-lang="tr">Atölyeden çıkanlar</span><span data-lang="en">Fresh from the studio</span></h2>
+        <p class="sub"><span data-lang="tr">Her uygulamayı küçük bir sorunu güzelce çözmek için yapıyoruz. Yenileri yolda.</span>
+          <span data-lang="en">We build each app to solve a small problem beautifully. More are on the way.</span></p>
+      </div>
+      <div class="grid">
+        <div class="proj reveal">
+          <div class="ico" style="background:linear-gradient(135deg,#FF9A8B,#FF5E8A)">🐾</div>
+          <h4>Pati Karnem</h4>
+          <p><span data-lang="tr">Evcil dostların için aşı, ilaç, veteriner ve harcama takibi.</span><span data-lang="en">Vaccine, medication, vet and spending tracker for your pets.</span></p>
+          <a class="more grad" href="#pati-karnem"><span data-lang="tr">İncele →</span><span data-lang="en">Explore →</span></a>
+        </div>
+        <div class="proj soon reveal">
+          <div class="ico">✨</div>
+          <h4><span data-lang="tr">Yakında</span><span data-lang="en">Coming soon</span></h4>
+          <p><span data-lang="tr">Yeni bir uygulama üzerinde çalışıyoruz.</span><span data-lang="en">We’re working on something new.</span></p>
+          <div class="shimmer" style="width:80%"></div><div class="shimmer" style="width:55%"></div>
+        </div>
+        <div class="proj soon reveal">
+          <div class="ico">🚀</div>
+          <h4><span data-lang="tr">Yakında</span><span data-lang="en">Coming soon</span></h4>
+          <p><span data-lang="tr">Fikir defterimiz dolu; sıradaki proje hazırlanıyor.</span><span data-lang="en">Our idea book is full; the next one is in the works.</span></p>
+          <div class="shimmer" style="width:70%"></div><div class="shimmer" style="width:45%"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nasıl çalışıyoruz -->
+  <section>
+    <div class="wrap">
+      <div class="reveal">
+        <div class="kicker"><span data-lang="tr">Nasıl çalışıyoruz</span><span data-lang="en">How we work</span></div>
+        <h2><span data-lang="tr">Küçük ekip, büyük özen</span><span data-lang="en">Small team, big care</span></h2>
+      </div>
+      <div class="values">
+        <div class="value reveal"><div class="em">🎨</div><b><span data-lang="tr">Tasarım önce</span><span data-lang="en">Design first</span></b>
+          <span><span data-lang="tr">Renkli, akıcı ve kullanması keyifli arayüzler.</span><span data-lang="en">Colorful, fluid interfaces that are a joy to use.</span></span></div>
+        <div class="value reveal"><div class="em">🔒</div><b><span data-lang="tr">Gizliliğe saygı</span><span data-lang="en">Respect for privacy</span></b>
+          <span><span data-lang="tr">Yalnızca gereken veriyi topluyor, açıkça anlatıyoruz.</span><span data-lang="en">We collect only what’s needed and explain it clearly.</span></span></div>
+        <div class="value reveal"><div class="em">🌱</div><b><span data-lang="tr">Sürekli gelişim</span><span data-lang="en">Always improving</span></b>
+          <span><span data-lang="tr">Geri bildirimleri dinliyor, uygulamalarımızı her sürümde iyileştiriyoruz.</span><span data-lang="en">We listen to feedback and improve with every release.</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- İletişim -->
+  <section id="iletisim">
+    <div class="wrap">
+      <div class="contact reveal">
+        <div class="kicker"><span data-lang="tr">İletişim</span><span data-lang="en">Contact</span></div>
+        <h2><span data-lang="tr">Bize yaz</span><span data-lang="en">Say hello</span></h2>
+        <p class="sub" style="margin:0 auto 18px"><span data-lang="tr">Soru, öneri ya da destek için:</span><span data-lang="en">Questions, ideas or support:</span></p>
+        <a class="mail grad" href="mailto:support@flyscripts.com">support@flyscripts.com</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="wrap">
+  <footer>
+    <span>© 2026 flyscripts app studios</span>
+    <span><a href="patikarnem/gizlilik.html">Pati Karnem · <span data-lang="tr">Gizlilik</span><span data-lang="en">Privacy</span></a></span>
+  </footer>
+</div>
+
+<script>
+// Dil: ?lang=en, kayıtlı seçim ya da tarayıcı dili.
+(function () {
+  var q = new URLSearchParams(location.search).get('lang'), saved = null;
+  try { saved = localStorage.getItem('fs-lang'); } catch (e) {}
+  var lang = q === 'en' || q === 'tr' ? q : saved || ((navigator.language || 'tr').toLowerCase().startsWith('tr') ? 'tr' : 'en');
+  function set(l) {
+    document.body.classList.remove('tr', 'en'); document.body.classList.add(l); document.documentElement.lang = l;
+    document.querySelectorAll('.lang button').forEach(function (b) { b.classList.toggle('on', b.dataset.l === l); });
+    document.querySelectorAll('a[href^="patikarnem/"]').forEach(function (a) { a.href = a.getAttribute('href').split('?')[0] + (l === 'en' ? '?lang=en' : ''); });
+    try { localStorage.setItem('fs-lang', l); } catch (e) {}
+  }
+  document.querySelectorAll('.lang button').forEach(function (b) { b.onclick = function () { set(b.dataset.l); }; });
+  set(lang);
+  // Kaydırınca belirme
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .12 }) : null;
+  document.querySelectorAll('.reveal').forEach(function (el, i) {
+    el.style.transitionDelay = (i % 3) * 90 + 'ms';
+    if (io) io.observe(el); else el.classList.add('in');
+  });
+})();
+</script>
 </body>
 </html>
