@@ -162,12 +162,15 @@ h2 { font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: clamp(30px
 .appicon { width: 64px; height: 64px; border-radius: 18px; box-shadow: 0 12px 30px rgba(14,110,110,.45); display: block; margin-bottom: 14px; }
 .btn.teal { background: linear-gradient(135deg, #14B8A6, #0E6E6E); color: #fff; box-shadow: 0 12px 30px rgba(20,184,166,.3); }
 .bkshots { position: relative; height: 540px; }
-.bkshots img {
-  position: absolute; width: 250px; border-radius: 40px; box-shadow: 0 40px 80px rgba(0,0,0,.55);
-  animation: floaty 7s ease-in-out infinite;
-}
-.bkshots img.b1 { right: 6%; top: 0; z-index: 2; }
-.bkshots img.b2 { left: 4%; top: 50px; transform: rotate(-6deg); opacity: .92; animation-delay: -3s; }
+/* Pati Karnem'deki telefon çerçevesinin aynısı; ekran görüntüsü üstten başlar, taşan kısım gizlenir */
+.bkshots .bkphone { height: 520px; }
+.bkshots .bkphone .screen { background: #161622; }
+.bkshots .bkphone .screen img { display: none; width: 100%; padding-top: 26px; background: #000; }
+body.tr .bkshots .bkphone .screen img[data-lang="tr"], body.en .bkshots .bkphone .screen img[data-lang="en"] { display: block; }
+.bkshots .b1 { right: 6%; top: 0; z-index: 2; }
+.bkshots .b2 { right: auto; left: 2%; top: 40px; transform: rotate(-6deg); animation-delay: -3s; z-index: 1; }
+.bkshots .b2 { animation-name: floatyTilt; }
+@keyframes floatyTilt { 0%, 100% { transform: rotate(-6deg); } 50% { transform: rotate(-6deg) translateY(-10px); } }
 .bkshots .chip.c3 { top: 30px; left: 0; animation-delay: -1s; }
 .bkshots .chip.c4 { bottom: 40px; right: 0; animation-delay: -4s; }
 .note { color: var(--soft); font-size: 13px; margin: 0 0 18px; }
@@ -228,7 +231,7 @@ body.tr img[data-lang="tr"], body.en img[data-lang="en"] { display: block; }
   .feature.bk { grid-template-columns: 1fr; }
   .feature.bk .bkshots { order: 2; }
   .bkshots { height: 470px; }
-  .bkshots img { width: 210px; }
+  .bkshots .bkphone { width: 220px; height: 440px; }
   .grid, .values { grid-template-columns: 1fr; }
   .nav nav > a { display: none; }
   .dd-menu { right: -60px; width: 290px; }
@@ -254,10 +257,10 @@ body.tr img[data-lang="tr"], body.en img[data-lang="en"] { display: block; }
         <button class="dd-btn" aria-haspopup="true" aria-expanded="false">
           <span data-lang="tr">Projeler</span><span data-lang="en">Projects</span> <span class="caret">▾</span></button>
         <div class="dd-menu" role="menu">
-          <a role="menuitem" href="#pati-karnem"><img src="assets/pati-icon.svg" alt=""><span><b>Pati Karnem</b>
-            <small><span data-lang="tr">Evcil dost sağlık karnesi · Yakında</span><span data-lang="en">Pet health card · Coming soon</span></small></span></a>
           <a role="menuitem" href="#benim-kredim"><img src="assets/bk-icon.png" alt=""><span><b>Benim Kredim</b>
             <small><span data-lang="tr">Kredi taksit takibi · Google Play’de</span><span data-lang="en">Loan installment tracker · On Google Play</span></small></span></a>
+          <a role="menuitem" href="#pati-karnem"><img src="assets/pati-icon.svg" alt=""><span><b>Pati Karnem</b>
+            <small><span data-lang="tr">Evcil dost sağlık karnesi · Yakında</span><span data-lang="en">Pet health card · Coming soon</span></small></span></a>
           <a role="menuitem" class="all" href="#projeler"><span data-lang="tr">Tüm projeler →</span><span data-lang="en">All projects →</span></a>
         </div>
       </div>
@@ -282,55 +285,20 @@ body.tr img[data-lang="tr"], body.en img[data-lang="en"] { display: block; }
       <span data-lang="en">flyscripts app studios builds colorful, carefully crafted mobile apps that make everyday life easier.</span>
     </p>
     <div class="cta">
-      <a class="btn primary" href="#pati-karnem"><span data-lang="tr">Pati Karnem’i keşfet</span><span data-lang="en">Discover Pati Karnem</span> →</a>
+      <a class="btn primary" href="#benim-kredim"><span data-lang="tr">Benim Kredim’i keşfet</span><span data-lang="en">Discover Benim Kredim</span> →</a>
       <a class="btn ghost" href="#projeler"><span data-lang="tr">Tüm projeler</span><span data-lang="en">All projects</span></a>
     </div>
   </div>
 
-  <!-- Öne çıkan: Pati Karnem -->
-  <section id="pati-karnem">
-    <div class="wrap">
-      <div class="feature reveal">
-        <div>
-          <span class="badge"><span data-lang="tr">Yakında Google Play’de</span><span data-lang="en">Coming soon to Google Play</span></span>
-          <h3><span class="paw">Pati Karnem</span> 🐾</h3>
-          <p class="tag">
-            <span data-lang="tr">Dostunun dijital sağlık karnesi. Aşılar, ilaçlar, veteriner ziyaretleri ve daha fazlası; hiçbir tarihi kaçırma.</span>
-            <span data-lang="en">Your pet’s digital health card. Vaccines, medications, vet visits and more; never miss a date.</span>
-          </p>
-          <ul class="perks">
-            <li><i style="background:rgba(76,141,255,.18)">💉</i><span><span data-lang="tr">Aşı ve ilaç takibi, zamanında hatırlatma</span><span data-lang="en">Vaccine &amp; medication tracking with reminders</span></span></li>
-            <li><i style="background:rgba(255,107,139,.18)">📄</i><span><span data-lang="tr">Tek dokunuşla sağlık karnesi (PDF)</span><span data-lang="en">One-tap health card (PDF)</span></span></li>
-            <li><i style="background:rgba(20,184,166,.18)">🗺️</i><span><span data-lang="tr">Yakındaki veterinerler haritada</span><span data-lang="en">Nearby vets on the map</span></span></li>
-            <li><i style="background:rgba(255,182,39,.18)">⚖️</i><span><span data-lang="tr">Kilo grafiği ve harcama takibi</span><span data-lang="en">Weight chart &amp; spending tracker</span></span></li>
-            <li><i style="background:rgba(139,92,246,.18)">🖼️</i><span><span data-lang="tr">Her dosta özel fotoğraf galerisi</span><span data-lang="en">A photo gallery for every pet</span></span></li>
-            <li><i style="background:rgba(255,255,255,.08)">☁️</i><span><span data-lang="tr">Hesabınla her cihazdan erişim</span><span data-lang="en">Access from any device with your account</span></span></li>
-          </ul>
-          <div class="links-row">
-            <a href="patikarnem/gizlilik.html"><span data-lang="tr">Gizlilik Politikası</span><span data-lang="en">Privacy Policy</span></a>
-            <a href="patikarnem/hesap-silme.html"><span data-lang="tr">Hesap silme</span><span data-lang="en">Account deletion</span></a>
-          </div>
-        </div>
-        <div class="shots" aria-hidden="true">
-          <div class="card-pdf"><img src="assets/pati-karne.jpg" alt=""></div>
-          <div class="phone"><div class="notch"></div><div class="screen"><img src="assets/pati-quickadd.jpg" alt="">
-            <div class="tabbar"><i class="on"></i><i></i><span class="plus">+</span><i></i><i></i></div></div></div>
-          <div class="chip c1">💊 <span data-lang="tr">Vitamin · Bugün</span><span data-lang="en">Vitamin · Today</span></div>
-          <div class="chip c2">✅ <span data-lang="tr">Kaydedildi!</span><span data-lang="en">Saved!</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- BenimKredim: Google Play'de yayında -->
-  <section id="benim-kredim" style="padding-top:0">
+  <section id="benim-kredim">
     <div class="wrap">
       <div class="feature bk reveal">
         <div class="bkshots" aria-hidden="true">
-          <img class="b2" data-lang="tr" src="assets/bk-tr-02.jpg" alt="">
-          <img class="b2" data-lang="en" src="assets/bk-en-02.jpg" alt="">
-          <img class="b1" data-lang="tr" src="assets/bk-tr-01.jpg" alt="">
-          <img class="b1" data-lang="en" src="assets/bk-en-01.jpg" alt="">
+          <div class="phone bkphone b2"><div class="notch"></div><div class="screen">
+            <img data-lang="tr" src="assets/bk-tr-02.jpg" alt=""><img data-lang="en" src="assets/bk-en-02.jpg" alt=""></div></div>
+          <div class="phone bkphone b1"><div class="notch"></div><div class="screen">
+            <img data-lang="tr" src="assets/bk-tr-01.jpg" alt=""><img data-lang="en" src="assets/bk-en-01.jpg" alt=""></div></div>
           <div class="chip c3">🔔 <span data-lang="tr">Yaklaşan taksit · 3 gün</span><span data-lang="en">Upcoming installment · 3 days</span></div>
           <div class="chip c4">📊 <span data-lang="tr">Raporlar</span><span data-lang="en">Reports</span></div>
         </div>
@@ -376,6 +344,41 @@ body.tr img[data-lang="tr"], body.en img[data-lang="en"] { display: block; }
     </div>
   </section>
 
+  <!-- Öne çıkan: Pati Karnem -->
+  <section id="pati-karnem" style="padding-top:0">
+    <div class="wrap">
+      <div class="feature reveal">
+        <div>
+          <span class="badge"><span data-lang="tr">Yakında Google Play’de</span><span data-lang="en">Coming soon to Google Play</span></span>
+          <h3><span class="paw">Pati Karnem</span> 🐾</h3>
+          <p class="tag">
+            <span data-lang="tr">Dostunun dijital sağlık karnesi. Aşılar, ilaçlar, veteriner ziyaretleri ve daha fazlası; hiçbir tarihi kaçırma.</span>
+            <span data-lang="en">Your pet’s digital health card. Vaccines, medications, vet visits and more; never miss a date.</span>
+          </p>
+          <ul class="perks">
+            <li><i style="background:rgba(76,141,255,.18)">💉</i><span><span data-lang="tr">Aşı ve ilaç takibi, zamanında hatırlatma</span><span data-lang="en">Vaccine &amp; medication tracking with reminders</span></span></li>
+            <li><i style="background:rgba(255,107,139,.18)">📄</i><span><span data-lang="tr">Tek dokunuşla sağlık karnesi (PDF)</span><span data-lang="en">One-tap health card (PDF)</span></span></li>
+            <li><i style="background:rgba(20,184,166,.18)">🗺️</i><span><span data-lang="tr">Yakındaki veterinerler haritada</span><span data-lang="en">Nearby vets on the map</span></span></li>
+            <li><i style="background:rgba(255,182,39,.18)">⚖️</i><span><span data-lang="tr">Kilo grafiği ve harcama takibi</span><span data-lang="en">Weight chart &amp; spending tracker</span></span></li>
+            <li><i style="background:rgba(139,92,246,.18)">🖼️</i><span><span data-lang="tr">Her dosta özel fotoğraf galerisi</span><span data-lang="en">A photo gallery for every pet</span></span></li>
+            <li><i style="background:rgba(255,255,255,.08)">☁️</i><span><span data-lang="tr">Hesabınla her cihazdan erişim</span><span data-lang="en">Access from any device with your account</span></span></li>
+          </ul>
+          <div class="links-row">
+            <a href="patikarnem/gizlilik.html"><span data-lang="tr">Gizlilik Politikası</span><span data-lang="en">Privacy Policy</span></a>
+            <a href="patikarnem/hesap-silme.html"><span data-lang="tr">Hesap silme</span><span data-lang="en">Account deletion</span></a>
+          </div>
+        </div>
+        <div class="shots" aria-hidden="true">
+          <div class="card-pdf"><img src="assets/pati-karne.jpg" alt=""></div>
+          <div class="phone"><div class="notch"></div><div class="screen"><img src="assets/pati-quickadd.jpg" alt="">
+            <div class="tabbar"><i class="on"></i><i></i><span class="plus">+</span><i></i><i></i></div></div></div>
+          <div class="chip c1">💊 <span data-lang="tr">Vitamin · Bugün</span><span data-lang="en">Vitamin · Today</span></div>
+          <div class="chip c2">✅ <span data-lang="tr">Kaydedildi!</span><span data-lang="en">Saved!</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Projeler -->
   <section id="projeler">
     <div class="wrap">
@@ -387,16 +390,16 @@ body.tr img[data-lang="tr"], body.en img[data-lang="en"] { display: block; }
       </div>
       <div class="grid">
         <div class="proj reveal">
-          <div class="ico" style="background:linear-gradient(135deg,#FF9A8B,#FF5E8A)">🐾</div>
-          <h4>Pati Karnem</h4>
-          <p><span data-lang="tr">Evcil dostların için aşı, ilaç, veteriner ve harcama takibi.</span><span data-lang="en">Vaccine, medication, vet and spending tracker for your pets.</span></p>
-          <a class="more grad" href="#pati-karnem"><span data-lang="tr">İncele →</span><span data-lang="en">Explore →</span></a>
-        </div>
-        <div class="proj reveal">
           <img class="ico" src="assets/bk-icon.png" alt="" style="padding:0;object-fit:cover">
           <h4>Benim Kredim</h4>
           <p><span data-lang="tr">Kredi borçlarının taksitlerini kendi kayıtlarınla takip et. Google Play’de yayında.</span><span data-lang="en">Track your loan installments with your own records. Live on Google Play.</span></p>
           <a class="more grad" href="#benim-kredim"><span data-lang="tr">İncele →</span><span data-lang="en">Explore →</span></a>
+        </div>
+        <div class="proj reveal">
+          <div class="ico" style="background:linear-gradient(135deg,#FF9A8B,#FF5E8A)">🐾</div>
+          <h4>Pati Karnem</h4>
+          <p><span data-lang="tr">Evcil dostların için aşı, ilaç, veteriner ve harcama takibi.</span><span data-lang="en">Vaccine, medication, vet and spending tracker for your pets.</span></p>
+          <a class="more grad" href="#pati-karnem"><span data-lang="tr">İncele →</span><span data-lang="en">Explore →</span></a>
         </div>
         <div class="proj soon reveal">
           <div class="ico">🚀</div>
