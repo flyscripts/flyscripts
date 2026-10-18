@@ -44,7 +44,9 @@ header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(14px); bac
 .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
 .logo img { height: 34px; }
 .logo b { font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 29px; letter-spacing: .2px; line-height: 1; }
-.logo small { color: var(--soft); font-weight: 700; font-size: 16px; margin-left: -6px; }
+/* Açılış logosundaki gibi: "app studios" adın altında, ortalı */
+.logo .wm { display: flex; flex-direction: column; align-items: center; line-height: 1; }
+.logo small { color: var(--soft); font-weight: 800; font-size: 13px; letter-spacing: .4px; margin-top: 2px; }
 .nav nav { margin-left: auto; display: flex; gap: 22px; }
 .nav nav a { text-decoration: none; color: var(--soft); font-weight: 800; font-size: 15px; transition: color .2s; }
 .nav nav a:hover { color: var(--ink); }
@@ -179,7 +181,6 @@ body.tr span[data-lang="tr"], body.en span[data-lang="en"] { display: inline; }
 }
 @media (max-width: 520px) {
   .perks { grid-template-columns: 1fr; }
-  .logo small { display: none; }
   .chip { font-size: 12px; padding: 8px 10px; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -193,7 +194,7 @@ body.tr span[data-lang="tr"], body.en span[data-lang="en"] { display: inline; }
 
 <header>
   <div class="wrap nav">
-    <a class="logo" href="#"><img src="assets/flyscripts-mark.svg" alt=""><b>flyscripts</b><small>app studios</small></a>
+    <a class="logo" href="#"><img src="assets/flyscripts-mark.svg" alt=""><span class="wm"><b>flyscripts</b><small>app studios</small></span></a>
     <nav>
       <a href="#projeler"><span data-lang="tr">Projeler</span><span data-lang="en">Projects</span></a>
       <a href="#pati-karnem">Pati Karnem</a>
