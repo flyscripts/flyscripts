@@ -1,0 +1,39 @@
+/* DayMosaic sitesi — uygulamanın "şafak ve alacakaranlık" renkleri ve kendi gömülü yazı tipleri (SIL OFL). */
+@font-face { font-family: "Nunito"; src: url("fonts/Nunito.ttf") format("truetype"); font-weight: 200 1000; font-display: swap; }
+@font-face { font-family: "Fraunces"; src: url("fonts/Fraunces.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
+
+:root {
+  --bg: #FBF6F1; --card: #FFFFFF; --ink: #2A2540; --soft: #7A7390; --line: #EFE6EE;
+  --violet: #7C6CF2; --rose: #F28AB0; --gold: #F9C74F; --teal: #34AFA0; --danger: #E5484D;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0E0F22; --card: #191A33; --ink: #F1EEFF; --soft: #A9A6C6; --line: #24254A; }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  font-family: "Nunito", system-ui, sans-serif; font-weight: 600; color: var(--ink); background: var(--bg);
+  line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+a { color: var(--violet); font-weight: 800; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+.hero {
+  border-radius: 28px; padding: 28px 24px; color: #fff; margin-bottom: 22px;
+  background: linear-gradient(135deg, var(--violet), var(--rose)); box-shadow: 0 16px 40px rgba(124,108,242,.25);
+}
+.hero .brand { font-size: 13px; font-weight: 900; letter-spacing: 1.4px; opacity: .9; text-transform: uppercase; }
+.hero h1 { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-variation-settings: "SOFT" 100; font-size: 36px; line-height: 1.15; margin: 6px 0 4px; }
+.hero p { margin: 0; opacity: .92; }
+h2 { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-variation-settings: "SOFT" 100; font-size: 24px; margin: 28px 0 6px; }
+h3 { font-size: 16px; font-weight: 900; margin: 18px 0 4px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 18px 20px; margin: 14px 0; }
+.muted { color: var(--soft); }
+ul { padding-left: 22px; } li { margin: 4px 0; }
+[data-lang] { display: none; }
+body.tr [data-lang="tr"], body.en [data-lang="en"] { display: block; }
+body.tr span[data-lang="tr"], body.en span[data-lang="en"] { display: inline; }
+.links a { display: block; margin: 10px 0; }
+.moods { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 4px; }
+.moods span { display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 999px; font-size: 14px; font-weight: 800; background: var(--card); border: 1px solid var(--line); }
+.moods i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+footer { margin-top: 36px; font-size: 13px; color: var(--soft); text-align: center; }

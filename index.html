@@ -6,7 +6,7 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.flyscripts.com/">
 <title>flyscripts app studios</title>
-<meta name="description" content="flyscripts app studios — gündelik hayatı kolaylaştıran, özenle tasarlanmış mobil uygulamalar. Uygulamalarımız: Benim Kredim ve Pati Karnem.">
+<meta name="description" content="flyscripts app studios — gündelik hayatı kolaylaştıran, özenle tasarlanmış mobil uygulamalar. Uygulamalarımız: Benim Kredim, Pati Karnem ve DayMosaic.">
 <meta property="og:title" content="flyscripts app studios">
 <meta property="og:description" content="Gündelik hayatı kolaylaştıran, özenle tasarlanmış mobil uygulamalar.">
 <link rel="icon" href="assets/flyscripts-mark.svg" type="image/svg+xml">
@@ -14,6 +14,7 @@
 /* Yazı tipleri: Nunito ve Baloo 2 (SIL OFL), kendi sunucumuzdan. */
 @font-face { font-family: "Nunito"; src: url("patikarnem/fonts/Nunito.ttf") format("truetype"); font-weight: 200 1000; font-display: swap; }
 @font-face { font-family: "Baloo 2"; src: url("patikarnem/fonts/Baloo2.ttf") format("truetype"); font-weight: 400 800; font-display: swap; }
+@font-face { font-family: "Fraunces"; src: url("daymosaic/fonts/Fraunces.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
 
 :root {
   --bg: #08060F; --bg2: #110D1D; --card: rgba(255,255,255,.045); --line: rgba(255,255,255,.09);
@@ -202,8 +203,26 @@ body.tr .bkshots .bkphone .screen img[data-lang="tr"], body.en .bkshots .bkphone
 .whatsnew ul { margin: 0; padding-left: 18px; font-size: 14px; }
 .whatsnew li { margin: 3px 0; }
 
+/* DayMosaic tanıtımı (uygulamanın alacakaranlık moru ve şafak pembesi) */
+.feature.dm {
+  background: radial-gradient(120% 140% at 0% 0%, rgba(124,108,242,.28), transparent 55%),
+              radial-gradient(120% 140% at 100% 100%, rgba(242,138,176,.22), transparent 55%), var(--bg2);
+}
+.feature.dm .badge { background: rgba(124,108,242,.16); color: #C4B5FD; }
+.feature.dm .badge::before { background: #A78BFA; box-shadow: 0 0 0 4px rgba(167,139,250,.22); }
+.feature.dm h3 .dmname {
+  font-family: "Fraunces", Georgia, serif; font-weight: 600; font-variation-settings: "SOFT" 100;
+  background: linear-gradient(90deg, #8B7BF5, #F28AB0 65%, #F9C74F); -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: .08em;
+}
+.feature.dm .trust { background: rgba(124,108,242,.08); border-color: rgba(167,139,250,.24); }
+.btn.dmb { background: linear-gradient(135deg, #7C6CF2, #F28AB0); color: #fff; }
+.dmshots .bkphone .screen, .dmshots .bkphone .screen img { background: #0E0F22; }
+.dmshots .chip.c3 { top: 30px; left: -6px; }
+.mosaic-row { display: flex; gap: 5px; margin: 0 0 22px; }
+.mosaic-row i { width: 22px; height: 22px; border-radius: 7px; display: block; }
+
 /* Proje ızgarası */
-.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
 .proj {
   position: relative; padding: 26px; border-radius: 28px; background: var(--card); border: 1px solid var(--line);
   min-height: 230px; display: flex; flex-direction: column; transition: transform .25s, border-color .25s;
@@ -250,6 +269,7 @@ body.tr img[data-lang="tr"], body.en img[data-lang="en"] { display: block; }
   .card-pdf { width: 190px; }
   .feature.bk { grid-template-columns: 1fr; }
   .feature.bk .bkshots { order: 2; }
+  .feature.dm { grid-template-columns: 1fr; }
   .bkshots { height: 470px; }
   .bkshots .bkphone { width: 220px; height: 440px; }
   .grid, .values { grid-template-columns: 1fr; }
@@ -281,6 +301,8 @@ body.tr img[data-lang="tr"], body.en img[data-lang="en"] { display: block; }
             <small><span data-lang="tr">Kredi taksit takibi · Google Play’de</span><span data-lang="en">Loan installment tracker · On Google Play</span></small></span></a>
           <a role="menuitem" href="#pati-karnem"><img src="assets/pati-icon.svg" alt=""><span><b>Pati Karnem</b>
             <small><span data-lang="tr">Evcil dost sağlık karnesi · Yakında</span><span data-lang="en">Pet health card · Coming soon</span></small></span></a>
+          <a role="menuitem" href="#daymosaic"><img src="assets/dm-icon.png" alt=""><span><b>DayMosaic</b>
+            <small><span data-lang="tr">Tek satır günlük · Yakında</span><span data-lang="en">One-line journal · Coming soon</span></small></span></a>
           <a role="menuitem" class="all" href="#projeler"><span data-lang="tr">Tüm projeler →</span><span data-lang="en">All projects →</span></a>
         </div>
       </div>
@@ -416,6 +438,59 @@ body.tr img[data-lang="tr"], body.en img[data-lang="en"] { display: block; }
     </div>
   </section>
 
+  <!-- DayMosaic: tek satır günlük -->
+  <section id="daymosaic" style="padding-top:0">
+    <div class="wrap">
+      <div class="feature dm reveal">
+        <div>
+          <img class="appicon" src="assets/dm-icon.png" alt="" style="box-shadow:0 12px 30px rgba(124,108,242,.45)">
+          <span class="badge"><span data-lang="tr">Yakında Google Play’de</span><span data-lang="en">Coming soon to Google Play</span></span>
+          <h3><span class="dmname">DayMosaic</span></h3>
+          <p class="tag">
+            <span data-lang="tr">Tek satır günlük. Her gün bir satır yaz, nasıl hissettiğini bir renkle işaretle; yıl, renkli bir mozaiğe dönüşsün.</span>
+            <span data-lang="en">A one-line journal. Write one line a day, mark how it felt with a colour, and watch your year become a colourful mosaic.</span>
+          </p>
+          <div class="mosaic-row" aria-hidden="true">
+            <i style="background:#F7B84B"></i><i style="background:#F7818F"></i><i style="background:#E987B4"></i><i style="background:#93C97F"></i><i style="background:#5CC6B5"></i><i style="background:#9C93DB"></i><i style="background:#7FA9E6"></i><i style="background:#B887D1"></i><i style="background:#D9705A"></i>
+          </div>
+          <div class="trust">
+            <h4><span data-lang="tr">Günlüğün yalnızca senin 🔐</span><span data-lang="en">Your journal is yours alone 🔐</span></h4>
+            <p><span data-lang="tr">Günlük en özel veridir. DayMosaic’te yazdıkların yalnızca telefonunda kalır; ne biz görürüz, ne başkası.</span>
+              <span data-lang="en">A journal is the most private data there is. In DayMosaic what you write stays on your phone; not us, not anyone.</span></p>
+            <div class="tchips">
+              <span class="t">📱 <span data-lang="tr">Veriler yalnızca telefonunda</span><span data-lang="en">Data stays on your phone</span></span>
+              <span class="t">👤 <span data-lang="tr">Hesap yok, kayıt yok</span><span data-lang="en">No account, no sign-up</span></span>
+              <span class="t">🕵️ <span data-lang="tr">Takip ve analitik yok</span><span data-lang="en">No tracking or analytics</span></span>
+              <span class="t">🔒 <span data-lang="tr">İsteğe bağlı PIN ve parmak izi kilidi</span><span data-lang="en">Optional PIN &amp; fingerprint lock</span></span>
+            </div>
+          </div>
+          <ul class="perks">
+            <li><i style="background:rgba(124,108,242,.18)">✍️</i><span><span data-lang="tr">Her gün tek satır, saniyeler içinde</span><span data-lang="en">One line a day, in seconds</span></span></li>
+            <li><i style="background:rgba(242,138,176,.18)">🎨</i><span><span data-lang="tr">Duygunu seç ya da kendi hissini ekle</span><span data-lang="en">Pick a feeling or add your own</span></span></li>
+            <li><i style="background:rgba(255,182,39,.18)">⏳</i><span><span data-lang="tr">“Geçmişte bugün” kartları</span><span data-lang="en">“On this day” cards</span></span></li>
+            <li><i style="background:rgba(20,184,166,.18)">🧩</i><span><span data-lang="tr">Yılın renkli mozaiği</span><span data-lang="en">Your year as a colour mosaic</span></span></li>
+            <li><i style="background:rgba(76,141,255,.18)">📊</i><span><span data-lang="tr">Duygu raporu: hangi histe kaç gün</span><span data-lang="en">Mood report: days per feeling</span></span></li>
+            <li><i style="background:rgba(255,107,139,.18)">🔥</i><span><span data-lang="tr">Yazma serini takip et</span><span data-lang="en">Keep your writing streak</span></span></li>
+          </ul>
+          <p class="note"><span data-lang="tr">DayMosaic kişisel bir günlüktür; tıbbi ya da psikolojik değerlendirme sunmaz.</span>
+            <span data-lang="en">DayMosaic is a personal journal; it does not provide medical or psychological assessment.</span></p>
+          <div class="links-row">
+            <a href="daymosaic/gizlilik.html"><span class="i">🔒</span><span data-lang="tr">Gizlilik Politikası</span><span data-lang="en">Privacy Policy</span></a>
+            <a href="daymosaic/"><span class="i">📖</span><span data-lang="tr">Uygulama sayfası</span><span data-lang="en">App page</span></a>
+          </div>
+        </div>
+        <div class="bkshots dmshots" aria-hidden="true">
+          <div class="phone bkphone b2"><div class="notch"></div><div class="screen">
+            <img data-lang="tr" src="assets/dm-mosaic-tr.jpg" alt=""><img data-lang="en" src="assets/dm-mosaic-en.jpg" alt=""></div></div>
+          <div class="phone bkphone b1"><div class="notch"></div><div class="screen">
+            <img data-lang="tr" src="assets/dm-today-tr.jpg" alt=""><img data-lang="en" src="assets/dm-today-en.jpg" alt=""></div></div>
+          <div class="chip c3">🔥 <span data-lang="tr">12 gün seri</span><span data-lang="en">12-day streak</span></div>
+          <div class="chip c4">🧩 <span data-lang="tr">Yılın mozaiği</span><span data-lang="en">Your year in colour</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Projeler -->
   <section id="projeler">
     <div class="wrap">
@@ -437,6 +512,12 @@ body.tr img[data-lang="tr"], body.en img[data-lang="en"] { display: block; }
           <h4>Pati Karnem</h4>
           <p><span data-lang="tr">Evcil dostlarınız için aşı, ilaç, veteriner ve harcama takibi.</span><span data-lang="en">Vaccine, medication, vet and spending tracker for your pets.</span></p>
           <a class="more grad" href="#pati-karnem"><span data-lang="tr">İncele →</span><span data-lang="en">Explore →</span></a>
+        </div>
+        <div class="proj reveal">
+          <img class="ico" src="assets/dm-icon.png" alt="" style="padding:0;object-fit:cover">
+          <h4>DayMosaic</h4>
+          <p><span data-lang="tr">Her gün tek satır ve bir duygu rengi; yılın renkli mozaiği. Yakında.</span><span data-lang="en">One line and one feeling colour a day; your year as a mosaic. Coming soon.</span></p>
+          <a class="more grad" href="#daymosaic"><span data-lang="tr">İncele →</span><span data-lang="en">Explore →</span></a>
         </div>
         <div class="proj soon reveal">
           <div class="ico">🚀</div>
@@ -495,7 +576,7 @@ body.tr img[data-lang="tr"], body.en img[data-lang="en"] { display: block; }
   function set(l) {
     document.body.classList.remove('tr', 'en'); document.body.classList.add(l); document.documentElement.lang = l;
     document.querySelectorAll('.lang button').forEach(function (b) { b.classList.toggle('on', b.dataset.l === l); });
-    document.querySelectorAll('a[href^="patikarnem/"], a[href^="benimkredim/"]').forEach(function (a) { a.href = a.getAttribute('href').split('?')[0] + (l === 'en' ? '?lang=en' : ''); });
+    document.querySelectorAll('a[href^="patikarnem/"], a[href^="benimkredim/"], a[href^="daymosaic/"]').forEach(function (a) { a.href = a.getAttribute('href').split('?')[0] + (l === 'en' ? '?lang=en' : ''); });
     try { localStorage.setItem('fs-lang', l); } catch (e) {}
   }
   document.querySelectorAll('.lang button').forEach(function (b) { b.onclick = function () { set(b.dataset.l); }; });
