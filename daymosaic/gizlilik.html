@@ -42,7 +42,7 @@
     <div class="hero">
       <div class="brand">DayMosaic</div>
       <h1>Gizlilik Politikası</h1>
-      <p>Son güncelleme: 27 Ekim 2026</p>
+      <p>Son güncelleme: 30 Ekim 2026</p>
     </div>
 
     <div class="card">
@@ -64,13 +64,16 @@
     <p>Aşağıdaki bilgiler yalnızca telefonunda, Uygulamanın kendi korumalı klasöründe saklanır:</p>
     <ul>
       <li>Günlük satırların, tarihleri ve seçtiğin duygular (kendi eklediğin his adları dahil).</li>
-      <li>Ayarların: dil ve görünüm.</li>
+      <li>Ayarların: dil, görünüm, günlük hatırlatmanın açık olup olmadığı ve saati, son yedeğin tarihi.</li>
       <li><b>Uygulama kilidi:</b> Kilidi açarsan PIN’in ve seçtiğin hatırlatma sorusunun cevabı düz hâlleriyle değil, geri çevrilemeyen tuzlanmış özetler (hash) olarak saklanır.</li>
       <li><b>Parmak izi / yüz:</b> Doğrulamayı telefonunun kendi sistemi yapar. Biyometrik verine Uygulama erişemez ve hiçbir şekilde saklamaz.</li>
     </ul>
 
     <h2>Yedekleme</h2>
     <ul>
+      <li><b>Yedeği dışa aktar:</b> Ayarlar’dan günlük satırlarını ve eklediğin hisleri bir dosyaya aktarabilirsin. Dosyayı nereye kaydedeceğini (telefon, Google Drive vb.) sen seçersin; dosya bize gönderilmez. PIN ve kilit bilgisi yedeğe girmez.</li>
+      <li>İstersen yedeği bir şifreyle koruyabilirsin; dosya bu şifreden türetilen bir anahtarla (AES-256) şifrelenir. Şifreyi biz bilmeyiz; unutursan yedek açılamaz. Şifresiz yedek dosyası, yazdıklarını açık metin olarak içerir; güvendiğin bir yerde sakla.</li>
+      <li><b>Yedekten geri yükle:</b> Seçtiğin dosyadaki günler telefonundaki günlükle birleştirilir; hiçbir şey silinmez.</li>
       <li>Günlüğün Google Drive bulut yedeğine <b>alınmaz</b>.</li>
       <li>Android 12 ve üzerinde, yeni telefona geçerken iki telefon arasında doğrudan yapılan aktarımda günlüğün yeni telefona taşınabilir. Bu aktarım bizim sunucularımızdan geçmez.</li>
     </ul>
@@ -78,13 +81,14 @@
     <h2>Verilerini silme</h2>
     <ul>
       <li>Uygulamada <b>Ayarlar → Tüm verilerimi sil</b> ile tüm satırların, duyguların, ayarların ve kilit bilgin telefondan kalıcı olarak silinir.</li>
-      <li>Uygulamayı kaldırdığında da tüm veriler telefondan silinir.</li>
+      <li>Uygulamayı kaldırdığında da tüm veriler telefondan silinir. Kendi aldığın yedek dosyaları sende kalır; onları sen silersin.</li>
       <li>Hesap olmadığı ve veriler bize ulaşmadığı için bizim tarafımızda silinecek bir veri bulunmaz.</li>
       <li>PIN’ini unutursan, kilidi açarken seçtiğin hatırlatma sorusunu cevaplayarak yeni bir PIN belirleyebilirsin. Cevabı da hatırlamazsan, hesap olmadığı için tek yol tüm verileri silmektir.</li>
     </ul>
 
     <h2>İzinler</h2>
     <ul>
+      <li><b>Bildirimler:</b> Yalnızca günlük hatırlatmayı açarsan istenir. Hatırlatma telefonunda kurulur; internet kullanılmaz.</li>
       <li><b>Biyometrik doğrulama:</b> Yalnızca kilidi parmak izi / yüz ile açmayı seçersen kullanılır.</li>
     </ul>
 
@@ -107,7 +111,7 @@
     <div class="hero">
       <div class="brand">DayMosaic</div>
       <h1>Privacy Policy</h1>
-      <p>Last updated: October 27, 2026</p>
+      <p>Last updated: October 30, 2026</p>
     </div>
 
     <div class="card">
@@ -128,13 +132,16 @@
     <p>The following is stored only on your phone, in the App’s own protected folder:</p>
     <ul>
       <li>Your journal lines, their dates and the feelings you pick (including feeling names you add yourself).</li>
-      <li>Your settings: language and appearance.</li>
+      <li>Your settings: language, appearance, whether the daily reminder is on and its time, and the date of your last backup.</li>
       <li><b>App lock:</b> if you turn it on, your PIN and the answer to your chosen recovery question are not stored as is but as salted, one-way hashes.</li>
       <li><b>Fingerprint / face:</b> verification is done by your phone’s own system. The App cannot access your biometric data and never stores it.</li>
     </ul>
 
     <h2>Backups</h2>
     <ul>
+      <li><b>Export a backup:</b> in Settings you can export your journal lines and the feelings you added to a file. You choose where to save it (your phone, Google Drive, etc.); the file is never sent to us. Your PIN and lock information are not included.</li>
+      <li>You can protect the backup with a password; the file is then encrypted (AES-256) with a key derived from it. We never know the password; if you forget it, the backup cannot be opened. An unprotected backup file contains your writing as plain text, so keep it somewhere safe.</li>
+      <li><b>Restore from a backup:</b> the days in the file you pick are merged with the journal on your phone; nothing is deleted.</li>
       <li>Your journal is <b>not</b> included in Google Drive cloud backups.</li>
       <li>On Android 12 and later, a direct phone-to-phone transfer when you switch phones can move your journal to the new phone. This transfer does not pass through our servers.</li>
     </ul>
@@ -142,13 +149,14 @@
     <h2>Deleting your data</h2>
     <ul>
       <li>In the App, <b>Settings → Delete all my data</b> permanently deletes all your lines, feelings, settings and lock information from the phone.</li>
-      <li>Uninstalling the App also deletes all its data from the phone.</li>
+      <li>Uninstalling the App also deletes all its data from the phone. Backup files you exported stay with you; you delete them yourself.</li>
       <li>Since there is no account and your data never reaches us, there is nothing to delete on our side.</li>
       <li>If you forget your PIN, you can answer the recovery question you picked when turning on the lock to set a new one. If you don’t remember the answer either, the only way back in is to delete all data, since there is no account.</li>
     </ul>
 
     <h2>Permissions</h2>
     <ul>
+      <li><b>Notifications:</b> asked only if you turn on the daily reminder. The reminder is scheduled on your phone; no internet is used.</li>
       <li><b>Biometric authentication:</b> used only if you choose to unlock with fingerprint / face.</li>
     </ul>
 
