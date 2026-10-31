@@ -1,0 +1,29 @@
+/* Tint Alchemist pages: the game's dark lab colours, system fonts. */
+:root {
+  --bg: #0E1A22; --card: #162733; --ink: #E8EEF0; --soft: #8DA2AD; --line: #2A4252;
+  --gold: #E7B24C; --violet: #8E6BD8; --teal: #3FB6A8; --danger: #E5674B;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--bg);
+  line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+a { color: var(--gold); font-weight: 700; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+.hero {
+  border-radius: 28px; padding: 28px 24px; margin-bottom: 22px; border: 1px solid var(--line);
+  background: linear-gradient(135deg, rgba(142,107,216,.35), var(--card) 55%, rgba(63,182,168,.25));
+}
+.hero .brand { font-size: 13px; font-weight: 800; letter-spacing: 1.4px; color: var(--gold); text-transform: uppercase; }
+.hero h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: 34px; line-height: 1.15; margin: 6px 0 4px; }
+.hero p { margin: 0; color: var(--soft); }
+h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: 23px; margin: 28px 0 6px; }
+h3 { font-size: 16px; font-weight: 800; margin: 18px 0 4px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 18px 20px; margin: 14px 0; }
+.muted { color: var(--soft); }
+ul, ol { padding-left: 22px; } li { margin: 4px 0; }
+[data-lang] { display: none; }
+body.tr [data-lang="tr"], body.en [data-lang="en"] { display: block; }
+body.tr span[data-lang="tr"], body.en span[data-lang="en"] { display: inline; }
+.links a { display: block; margin: 10px 0; }
