@@ -67,3 +67,25 @@ body { background: var(--bg); color: var(--ink); }
 
 /* Satır içi dil parçaları (menü, gezinti izi) blok olmasın */
 body.tr span[data-lang="tr"], body.en span[data-lang="en"] { display: inline; }
+
+
+/* Uygulama sayfaları: kahraman kartın altında telefon çerçevesinde ekran görüntüleri */
+.shots-row { display: flex; justify-content: center; align-items: flex-start; gap: 22px; margin: 6px 0 22px; flex-wrap: wrap; }
+.shots-row .ph {
+  width: 230px; height: 470px; border-radius: 38px; padding: 10px; position: relative; flex: none;
+  background: linear-gradient(160deg, #2a2240, #120e1c); box-shadow: 0 26px 56px rgba(0,0,0,.5), inset 0 0 0 1px rgba(255,255,255,.08);
+}
+.shots-row .ph .scr { width: 100%; height: 100%; border-radius: 29px; overflow: hidden; background: #000; }
+.shots-row .ph img { width: 100%; display: block; padding-top: 22px; background: #000; }
+.shots-row .ph::before { content: ""; position: absolute; top: 9px; left: 50%; transform: translateX(-50%); width: 70px; height: 18px; border-radius: 10px; background: #000; z-index: 1; }
+.shots-row .ph:nth-child(2) { margin-top: 34px; }
+.shots-row .paper { width: 250px; margin-top: 60px; border-radius: 14px; overflow: hidden; border: 6px solid #fff; transform: rotate(3deg); box-shadow: 0 26px 56px rgba(0,0,0,.5); flex: none; }
+.shots-row .paper img { width: 100%; display: block; }
+@media (max-width: 560px) {
+  .shots-row { gap: 12px; flex-wrap: nowrap; }
+  .shots-row .ph { width: calc(50% - 6px); height: auto; aspect-ratio: 230 / 470; border-radius: 28px; padding: 7px; }
+  .shots-row .ph .scr { border-radius: 22px; }
+  .shots-row .ph img { padding-top: 16px; }
+  .shots-row .ph::before { width: 50px; height: 13px; top: 7px; }
+  .shots-row .paper { width: calc(50% - 6px); margin-top: 30px; border-width: 4px; }
+}
