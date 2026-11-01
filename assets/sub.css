@@ -24,8 +24,8 @@ body { background: var(--bg); color: var(--ink); }
 .site-header nav { margin-left: auto; display: flex; gap: 22px; align-items: center; }
 .site-header nav > a { text-decoration: none; color: var(--soft); font-weight: 800; font-size: 15px; }
 .site-header nav > a:hover { color: var(--ink); }
-.site-header .lang { margin: 0; background: transparent; border: 1px solid var(--line); border-radius: 12px; padding: 3px; gap: 2px; }
-.site-header .lang button { font-size: 13px; padding: 5px 10px; border-radius: 9px; }
+.site-header .lang { display: inline-flex; margin: 0; background: transparent; border: 1px solid var(--line); border-radius: 12px; padding: 3px; gap: 2px; }
+.site-header .lang button { font: inherit; font-size: 13px; font-weight: 900; border: 0; padding: 5px 10px; border-radius: 9px; cursor: pointer; background: transparent; color: var(--soft); }
 .site-header .lang button.on { background: var(--brand); color: #fff; }
 
 .dd { position: relative; }
